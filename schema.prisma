@@ -1,0 +1,40 @@
+datasource db {
+  provider = "postgresql" // or "mysql" depending on your database
+  url      = env("DATABASE_URL") // Place your connection string in the .env file
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model Exhibition {
+  id                        Int      @id @default(autoincrement())
+  hallName                  String
+  dimensions                String
+  enclosedHall              Boolean
+  hasCurtains               Boolean
+  cooling                   String
+  floor                     Int
+  storageSpace              Boolean
+  proximityToTruckEntrance  String
+  powerOutlets              Int
+  tablesNeeded              Int
+  spaceForVR                Boolean
+  wifiAccess                Boolean
+  lectureHallName           String
+  lectureHallArea           String
+  seatingCapacity           Int
+  hasAVFacilities           Boolean
+  distanceFromExhibitionHall String
+  accommodation             String
+  localTransport            Boolean
+  studentVolunteers         Int
+  parkingSpace              Boolean
+  loadingManpower           Int
+  contactPerson             String
+  contactNumber             String
+  contactEmail              String
+  eventVenue                String
+  teacherTraining           Boolean
+  quizProgramme             Boolean
+}
